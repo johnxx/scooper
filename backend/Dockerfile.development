@@ -1,0 +1,7 @@
+FROM php:7.3-fpm
+RUN ln -sf "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+COPY xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+COPY . /srv/www
+RUN cd /srv/www && php artisan migrate
+RUN chmod -R ugo+rwX /srv/www/storage
