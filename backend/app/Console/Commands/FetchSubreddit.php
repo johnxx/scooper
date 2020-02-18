@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Reddit\SubredditAPI;
+use App\Post;
 use Illuminate\Console\Command;
 
 class FetchSubreddit extends Command
@@ -11,7 +13,7 @@ class FetchSubreddit extends Command
      *
      * @var string
      */
-    protected $signature = 'fetch:subreddit';
+    protected $signature = 'fetch:subreddit {--sort=} {subreddit}';
 
     /**
      * The console command description.
@@ -37,6 +39,13 @@ class FetchSubreddit extends Command
      */
     public function handle()
     {
-        //
+        $sub = new SubredditAPI($this->argument('subreddit'));
+        $res = $sub->fetch($this->option('sort'));
+        foreach($res->data->children as $post) {
+            $post = Post::fromRedditPost($post->data);
+            $post->fill((array) $post->data);
+            $post->save();
+        }
+        return $res;
     }
 }

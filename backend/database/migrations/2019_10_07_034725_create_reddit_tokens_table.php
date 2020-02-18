@@ -15,7 +15,7 @@ class CreateRedditTokensTable extends Migration
     {
         Schema::create('reddit_tokens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('access_token');
             $table->string('token_type');
             $table->string('expires_in');

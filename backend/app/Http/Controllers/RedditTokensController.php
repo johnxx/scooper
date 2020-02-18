@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RedditTokens;
+use App\RedditToken;
 use Illuminate\Http\Request;
 
 class RedditTokensController extends Controller
@@ -41,10 +41,10 @@ class RedditTokensController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\RedditTokens  $redditTokens
+     * @param  \App\RedditToken  $redditTokens
      * @return \Illuminate\Http\Response
      */
-    public function show(RedditTokens $redditTokens)
+    public function show(RedditToken $redditTokens)
     {
         //
     }
@@ -52,10 +52,10 @@ class RedditTokensController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\RedditTokens  $redditTokens
+     * @param  \App\RedditToken  $redditTokens
      * @return \Illuminate\Http\Response
      */
-    public function edit(RedditTokens $redditTokens)
+    public function edit(RedditToken $redditTokens)
     {
         //
     }
@@ -64,10 +64,10 @@ class RedditTokensController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RedditTokens  $redditTokens
+     * @param  \App\RedditToken  $redditTokens
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RedditTokens $redditTokens)
+    public function update(Request $request, RedditToken $redditTokens)
     {
         //
     }
@@ -75,10 +75,10 @@ class RedditTokensController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\RedditTokens  $redditTokens
+     * @param  \App\RedditToken  $redditTokens
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RedditTokens $redditTokens)
+    public function destroy(RedditToken $redditTokens)
     {
         //
     }

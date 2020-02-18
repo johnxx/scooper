@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79ed730-f8d7-402f-a0c1-9741d987bede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/scrapper.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/john.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/RedditToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/FetchSubreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/FetchSubreddit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedditTokensController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedditTokensController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/MediaPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MediaPosts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reddit/RedditAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reddit/RedditAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reddit/SubredditAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reddit/SubredditAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RedditTokens.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Subreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subreddit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_07_034725_create_reddit_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_07_034725_create_reddit_tokens_table.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,13 +30,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="$USER_HOME$/.local/bin/composer" />
     </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="System PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
@@ -105,13 +119,30 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/rmccue/requests" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RoSmxnu4CtYZgJhnwYDI4e8nqT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="Constants" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/artisan" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -121,24 +152,32 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.artisan fetch:subreddit">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="artisan fetch:subreddit" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/artisan" scriptParameters="fetch:subreddit">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Script.artisan fetch:subreddit" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -152,6 +191,20 @@
       <updated>1570332117619</updated>
       <workItem from="1570332119555" duration="7767000" />
       <workItem from="1570396926105" duration="16830000" />
+      <workItem from="1571028419537" duration="199000" />
+      <workItem from="1571028633059" duration="276000" />
+      <workItem from="1571028925583" duration="580000" />
+      <workItem from="1571029522438" duration="89000" />
+      <workItem from="1571029628469" duration="136000" />
+      <workItem from="1571029781739" duration="290000" />
+      <workItem from="1571030089750" duration="231000" />
+      <workItem from="1571030341413" duration="11660000" />
+      <workItem from="1572500633159" duration="2446000" />
+      <workItem from="1577915738662" duration="4000" />
+      <workItem from="1577916188662" duration="41000" />
+      <workItem from="1577916331458" duration="33000" />
+      <workItem from="1577916383043" duration="64000" />
+      <workItem from="1578686726767" duration="8000" />
     </task>
     <servers />
   </component>
@@ -170,5 +223,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2883" y="451" width="624" height="539" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577916352919">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2883" y="451" width="624" height="539" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1577916352919" />
+    <state x="2893" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1577916332322">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2893" y="549" key="com.intellij.ide.util.TipDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1577916332322" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/RedditToken.php</url>
+          <line>54</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/RedditToken.php</url>
+          <line>57</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
