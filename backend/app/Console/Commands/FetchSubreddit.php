@@ -42,9 +42,7 @@ class FetchSubreddit extends Command
         $sub = new SubredditAPI($this->argument('subreddit'));
         $res = $sub->fetch($this->option('sort'));
         foreach($res->data->children as $post) {
-            $post = Post::fromRedditPost($post->data);
-            $post->fill((array) $post->data);
-            $post->save();
+            $post = Post::createFromRedditPost($post->data);
         }
         return $res;
     }

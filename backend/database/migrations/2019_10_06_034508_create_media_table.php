@@ -19,10 +19,10 @@ class CreateMediaTable extends Migration
             $table->string('gallery_url')->nullable();
             $table->bigInteger('gallery_id')->nullable();
             $table->foreign('gallery_id')->references('id')->on('media');
-            $table->string('canonical_url');
+            $table->string('canonical_url')->unique();
             $table->boolean('downloaded');
             $table->integer('download_attempts');
-            $table->string('file_path');
+            $table->string('file_path')->nullable();
             $table->timestamps();
         });
     }

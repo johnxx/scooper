@@ -36,15 +36,40 @@ class Post extends Model
 
     protected $guarded = [];
 
-    public static function fromRedditPost(StdClass $reddit_post) {
-        $data = [
-            'reddit_id' => $reddit_post->name,
-            'title' => $reddit_post->title,
-            'permalink' => $reddit_post->permalink,
-            'raw_data' => json_encode($reddit_post)
-        ];
-        $post = new self;
-        $post->fill($data);
+    protected $casts = [
+        'raw_data' => 'array'
+    ];
+
+    public static function createFromRedditPost(StdClass $reddit_post) {
+        $post = self
+            ::where('reddit_id', $reddit_post->name)
+            ->first();
+        if(!$post) {
+            $post = self::create([
+                'reddit_id' => $reddit_post->name,
+                'title' => $reddit_post->title,
+                'permalink' => $reddit_post->permalink,
+                'raw_data' => $reddit_post
+            ]);
+            $post->save();
+        }
+        $url = $reddit_post->url;
+        if($url) {
+            $media = Media
+                ::where('canonical_url', $url)
+                ->first();
+            if($media) {
+                if(!$post->media->contains($media)) {
+                    $post->media()->attach($media);
+                }
+            } else {
+                $post->media()->create([
+                    'canonical_url' => $url,
+                    'downloaded' => false,
+                    'download_attempts' => 0
+                ]);
+            }
+        }
         return $post;
     }
 
@@ -58,6 +83,6 @@ class Post extends Model
     }
 
     public function media() {
-        return $this->belongsToMany('App\Media');
+        return $this->belongsToMany('App\Media', 'media_posts');
     }
 }

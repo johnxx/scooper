@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Observers\MediaObserver;
 
 /**
  * App\Media
@@ -40,6 +41,13 @@ use Illuminate\Database\Eloquent\Model;
 class Media extends Model
 {
 
+    protected $guarded = [];
+
+    public static function boot() {
+        parent::boot();
+        self::observe(new MediaObserver);
+    }
+
     public function gallery() {
         return $this->hasOne('App\Media')
             ->where('id', '=', $this->gallery_id);
@@ -56,6 +64,6 @@ class Media extends Model
     }
 
     public function posts() {
-        return $this->belongsToMany('App\Post');
+        return $this->belongsToMany('App\Post', 'media_posts');
     }
 }
