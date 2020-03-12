@@ -36,16 +36,17 @@ class FetchMedia implements ShouldQueue
      */
     public function handle()
     {
-        $context = stream_context_create([
-            'http' => [
-                'method' => 'GET'
-            ]
-        ]);
-
-        /* Sends an http request to www.example.com
-           with additional headers shown above */
-        $file_resource = fopen($this->media->canonical_url, 'r', false, $context);
         $file_name = collect(explode('/', $this->media->canonical_url))->last();
-        Storage::put($file_name, $file_resource, 'public');
+        $file_ext = collect(explode('.', $file_name))->last();
+        if(collect(['png', 'jpg', 'gif'])->contains($file_ext)) {
+            $response = Requests::get($this->media->canonical_url);
+            $this->media->download_attempts++;
+            if($response->status_code == 200
+                && substr($response->headers['content-type'], 0,5) === 'image') {
+                Storage::put($file_name, $response->body, 'public');
+                $this->media->downloaded = true;
+            }
+            $this->media->save();
+        }
     }
 }

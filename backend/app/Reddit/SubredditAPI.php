@@ -13,20 +13,32 @@ class SubredditAPI {
 
     public $subreddit;
 
+    protected $headers;
+
     public function __construct(string $subreddit)
     {
         $this->token = RedditToken::acquire();
         $this->subreddit = $subreddit;
-    }
-
-    public function fetch(string $sort = 'hot') {
-        $url = $this->base_url.$this->subreddit.'/'.$sort.".json"."?raw_json=1";
-        $headers = [
+        $this->headers = [
             'Authorization' => 'bearer '.$this->token,
             'Accept' => 'application/json'
         ];
-        $res = Requests::get($url, $headers);
-        return json_decode($res->body);
+    }
+
+    protected function fetch($url) {
+        return json_decode(Requests::get($url, $this->headers)->body)->data;
+    }
+
+    public function about() {
+        $url = $this->base_url.$this->subreddit.'/about.json?raw_json=1';
+        $res = $this->fetch($url);
+        return $res;
+    }
+
+    public function posts(string $sort = 'hot') {
+        $url = $this->base_url.$this->subreddit.'/'.$sort.".json"."?raw_json=1";
+        $res = $this->fetch($url);
+        return $res;
     }
 
 }

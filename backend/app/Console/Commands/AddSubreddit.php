@@ -3,24 +3,24 @@
 namespace App\Console\Commands;
 
 use App\Reddit\SubredditAPI;
-use App\Post;
+use App\Subreddit;
 use Illuminate\Console\Command;
 
-class FetchSubreddit extends Command
+class AddSubreddit extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'subreddit:fetch {--sort=} {subreddit}';
+    protected $signature = 'subreddit:add {subreddit}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Fetch posts from a subreddit';
+    protected $description = 'Add subreddit to db';
 
     /**
      * Create a new command instance.
@@ -40,10 +40,8 @@ class FetchSubreddit extends Command
     public function handle()
     {
         $sub = new SubredditAPI($this->argument('subreddit'));
-        $res = $sub->posts($this->option('sort'));
-        foreach($res->children as $post) {
-            $post = Post::createFromRedditPost($post->data);
-        }
-        return $res;
+        $res = $sub->about();
+        Subreddit::createFromSubreddit($res);
+        //
     }
 }

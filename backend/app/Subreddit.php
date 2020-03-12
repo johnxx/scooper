@@ -2,6 +2,7 @@
 
 namespace App;
 
+use StdClass;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -32,6 +33,26 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Subreddit extends Model
 {
+
+    protected $guarded = [];
+
+    protected $casts = [
+        'raw_data' => 'array'
+    ];
+
+    public static function createFromSubreddit(StdClass $subreddit) {
+        return $subreddit = self::updateOrCreate(
+            [
+                'reddit_id' => $subreddit->name
+            ],
+            [
+                'name' => $subreddit->display_name,
+                'raw_data' => $subreddit,
+                'subscribed' => 1,
+                'poll_interval' => '1h'
+            ]);
+    }
+
     public function posts() {
         return $this->hasMany('App\Post');
     }
