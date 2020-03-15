@@ -41,7 +41,6 @@ class AddSubreddit extends Command
     {
         $sub = new SubredditAPI($this->argument('subreddit'));
         $res = $sub->about();
-        Subreddit::createFromSubreddit($res);
-        //
+        return Subreddit::createFromSubreddit($res);
     }
 }

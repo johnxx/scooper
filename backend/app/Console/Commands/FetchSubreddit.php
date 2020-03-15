@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Reddit\SubredditAPI;
-use App\Post;
+use App\Subreddit;
 use Illuminate\Console\Command;
+use Ramsey\Uuid\Uuid;
 
 class FetchSubreddit extends Command
 {
@@ -39,11 +39,37 @@ class FetchSubreddit extends Command
      */
     public function handle()
     {
-        $sub = new SubredditAPI($this->argument('subreddit'));
-        $res = $sub->posts($this->option('sort'));
-        foreach($res->children as $post) {
-            $post = Post::createFromRedditPost($post->data);
+        $sub_name = $this->argument('subreddit');
+        try {
+            $sub = Subreddit::where('name', $sub_name)->firstOrFail();
+        } catch(\Exception $exception) {
+            print("Subreddit '$sub_name' not found in the db. Add it first.");
+            return false;
         }
-        return $res;
+        $job_uuid = Uuid::uuid4();
+        $channel = 'job.'.$job_uuid;
+        $redis_cfg = config('database.redis.default');
+        $client = new \Predis\Client($redis_cfg);
+        $pubsub = $client->pubSubLoop();
+        $pubsub->subscribe($channel);
+        \App\Jobs\FetchSubreddit::dispatch($sub, $this->option('sort'), $job_uuid);
+        foreach($pubsub as $message) {
+            $complete = false;
+            switch($message->kind) {
+                case 'message':
+                    $info = json_decode($message->payload);
+                    if($info->success) {
+                        print("Saved {$info->count} posts from {$info->subreddit}");
+                        $complete = true;
+                    }
+                    break;
+                default:
+                    break;
+
+            }
+            if($complete)
+                break;
+        }
+        print("HONK!");
     }
 }

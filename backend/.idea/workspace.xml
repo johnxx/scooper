@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f79ed730-f8d7-402f-a0c1-9741d987bede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/RedditToken.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/AddSubreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/AddSubreddit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/FetchSubreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/FetchSubreddit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedditTokensController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedditTokensController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/MediaPosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MediaPosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reddit/RedditAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reddit/RedditAPI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/FetchMedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/FetchMedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/FetchSubreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/FetchSubreddit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/MediaObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/MediaObserver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Reddit/SubredditAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reddit/SubredditAPI.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/RedditTokens.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Subreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subreddit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_07_034725_create_reddit_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_07_034725_create_reddit_tokens_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +119,8 @@
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/rmccue/requests" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RoSmxnu4CtYZgJhnwYDI4e8nqT" />
@@ -152,18 +144,18 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="PHP Script.artisan fetch:subreddit">
+  <component name="RunManager" selected="PHP Script.artisan fetch:subreddit (awwnime)">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="artisan fetch:subreddit" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/artisan" scriptParameters="fetch:subreddit">
+    <configuration name="artisan fetch:subreddit (awwnime)" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/artisan" scriptParameters="-v subreddit:fetch awwnime">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Script.artisan fetch:subreddit" />
+      <item itemvalue="PHP Script.artisan fetch:subreddit (awwnime)" />
       <item itemvalue="PHPUnit.phpunit.xml" />
     </list>
   </component>
@@ -205,6 +197,9 @@
       <workItem from="1577916331458" duration="33000" />
       <workItem from="1577916383043" duration="64000" />
       <workItem from="1578686726767" duration="8000" />
+      <workItem from="1584252498160" duration="59000" />
+      <workItem from="1584252574529" duration="209000" />
+      <workItem from="1584252803008" duration="12902000" />
     </task>
     <servers />
   </component>
@@ -225,29 +220,86 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2883" y="451" width="624" height="539" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577916352919">
+    <state x="2783" y="395" width="824" height="682" key="#CLI_Interpreters" timestamp="1584257628496">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state x="2883" y="451" width="624" height="539" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1577916352919" />
+    <state x="2783" y="395" width="824" height="682" key="#CLI_Interpreters/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584257628496" />
+    <state x="2658" y="395" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584260333027">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2658" y="395" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584260333027" />
+    <state x="2883" y="451" width="624" height="539" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584252511576">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2883" y="451" width="624" height="539" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584252511576" />
+    <state x="2933" y="495" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584256565516">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2933" y="495" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584256565516" />
+    <state width="2514" height="487" key="GridCell.Tab.0.bottom" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.0.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.0.center" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.0.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.0.left" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.0.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.0.right" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.0.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.1.bottom" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.1.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.1.center" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.1.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.1.left" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.1.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state width="2514" height="487" key="GridCell.Tab.1.right" timestamp="1584266951344">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state width="2514" height="487" key="GridCell.Tab.1.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584266951344" />
+    <state x="2704" y="372" key="SettingsEditor" timestamp="1584252863859">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2704" y="372" key="SettingsEditor/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584252863859" />
     <state x="2893" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1577916332322">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
     <state x="2893" y="549" key="com.intellij.ide.util.TipDialog/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1577916332322" />
+    <state x="2863" y="353" width="672" height="678" key="search.everywhere.popup" timestamp="1584264901466">
+      <screen x="1920" y="2" width="2560" height="1440" />
+    </state>
+    <state x="2863" y="353" width="672" height="678" key="search.everywhere.popup/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584264901466" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/RedditToken.php</url>
-          <line>54</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/RedditToken.php</url>
-          <line>57</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/app/Console/Commands/FetchSubreddit.php</url>
+          <line>59</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PhpLocalRunConfigurationType">
+        <watch expression="$post-&gt;title" language="PHP" />
+        <watch expression="$media-&gt;download_attempts" language="PHP" />
+        <watch expression="$media-&gt;downloaded" language="PHP" />
+        <watch expression="$media-&gt;canonical_url" language="PHP" />
+        <watch expression="$this-&gt;media-&gt;download_attempts" language="PHP" />
+        <watch expression="config('database.redis.default')" language="PHP" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

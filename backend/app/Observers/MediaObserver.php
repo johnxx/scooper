@@ -11,6 +11,7 @@ class MediaObserver
     }
 
     public function saved(Media $media) {
-        FetchMedia::dispatch($media, $media->id);
+        if(!$media->downloaded)
+            FetchMedia::dispatch($media);
     }
 }

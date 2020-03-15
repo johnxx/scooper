@@ -22,9 +22,9 @@ class FetchMedia implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @return void
+     * @param Media $media
      */
-    public function __construct(Media $media, $media_id)
+    public function __construct(Media $media)
     {
         $this->media = $media;
     }

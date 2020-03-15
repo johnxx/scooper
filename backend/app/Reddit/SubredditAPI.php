@@ -2,6 +2,7 @@
 
 namespace App\Reddit;
 
+use phpDocumentor\Reflection\Types\Nullable;
 use Requests;
 use App\RedditToken;
 use App\Subreddit;
@@ -13,32 +14,35 @@ class SubredditAPI {
 
     public $subreddit;
 
+    public $subreddit_url;
+
     protected $headers;
 
     public function __construct(string $subreddit)
     {
         $this->token = RedditToken::acquire();
         $this->subreddit = $subreddit;
+        $this->subreddit_url = $this->base_url.$subreddit;
         $this->headers = [
             'Authorization' => 'bearer '.$this->token,
             'Accept' => 'application/json'
         ];
     }
 
-    protected function fetch($url) {
-        return json_decode(Requests::get($url, $this->headers)->body)->data;
+    protected function fetch($rel_url) {
+        return json_decode(
+            Requests::get($this->subreddit_url.$rel_url.".json?raw_json=1", $this->headers)->body
+        )->data;
     }
 
     public function about() {
-        $url = $this->base_url.$this->subreddit.'/about.json?raw_json=1';
-        $res = $this->fetch($url);
-        return $res;
+        return $this->fetch('/about');
     }
 
-    public function posts(string $sort = 'hot') {
-        $url = $this->base_url.$this->subreddit.'/'.$sort.".json"."?raw_json=1";
-        $res = $this->fetch($url);
-        return $res;
+    public function posts($sort = 'hot') {
+        if(empty($sort))
+            $sort = 'hot';
+        return $this->fetch("/$sort");
     }
 
 }
