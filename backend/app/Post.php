@@ -41,17 +41,18 @@ class Post extends Model
     ];
 
     public static function createFromRedditPost(StdClass $reddit_post) {
+        $sub = Subreddit::where('reddit_id', $reddit_post->subreddit_id)->firstOrFail();
         $post = self
             ::where('reddit_id', $reddit_post->name)
             ->first();
         if(!$post) {
-            $post = self::create([
+            $post = new Post([
                 'reddit_id' => $reddit_post->name,
                 'title' => $reddit_post->title,
                 'permalink' => $reddit_post->permalink,
                 'raw_data' => $reddit_post
             ]);
-            $post->save();
+            $sub->posts()->save($post);
         }
         $url = $reddit_post->url;
         if($url) {

@@ -16,6 +16,8 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('reddit_id')->unique();
+            $table->bigInteger('subreddit_id');
+            $table->foreign('subreddit_id')->references('id')->on('subreddits');
             $table->string('title');
             $table->string('permalink');
             $table->json('raw_data');

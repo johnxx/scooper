@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('subreddit/{subreddit}/posts', 'SubredditController@show');
+Route::get('subreddit/{subreddit}/media', 'SubredditController@media');

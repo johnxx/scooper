@@ -42,11 +42,40 @@ class SubredditController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Subreddit  $subreddit
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function media(Subreddit $subreddit)
+    {
+        $media = collect();
+        foreach($subreddit->posts as $post) {
+            $post_images = $post->media->map(function($img) {
+                return [
+                    'src' => asset($img->file_path),
+                    'width' => $img->width / 2,
+                    'height' => $img->height / 2
+                ];
+            });
+            $media = $media->concat($post_images);
+            // $media->merge($post->images->map(function($img) {
+            //     return [
+            //         'src' => $img->file_path,
+            //         'width' => $img->width,
+            //         'height' => $img->height
+            //     ];
+            // }));
+        }
+        return response()->json($media);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Subreddit  $subreddit
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Subreddit $subreddit)
     {
-        //
+        return response()->json($subreddit->posts);
     }
 
     /**

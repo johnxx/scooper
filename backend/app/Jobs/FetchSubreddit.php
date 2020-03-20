@@ -47,9 +47,17 @@ class FetchSubreddit implements ShouldQueue
         $res = $sub_api->posts($this->sort);
         foreach($res->children as $post) {
             $post = Post::createFromRedditPost($post->data);
+            if($this->uuid)
+                $client->publish('job.'.$this->uuid, json_encode([
+                    'notification' => 'post',
+                    'subreddit' => $this->subreddit->name,
+                    'post' => $post->title,
+                    'success' => 1
+                ]));
         }
         if($this->uuid)
             $client->publish('job.'.$this->uuid, json_encode([
+                'notification' => 'subreddit',
                 'count' => count($res->children),
                 'subreddit' => $this->subreddit->name,
                 'success' => 1

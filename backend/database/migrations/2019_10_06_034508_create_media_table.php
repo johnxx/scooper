@@ -23,6 +23,8 @@ class CreateMediaTable extends Migration
             $table->boolean('downloaded');
             $table->integer('download_attempts');
             $table->string('file_path')->nullable();
+            $table->integer('width')->nullable();
+            $table->integer('height')->nullable();
             $table->timestamps();
         });
     }

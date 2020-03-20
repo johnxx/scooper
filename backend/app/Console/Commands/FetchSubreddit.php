@@ -35,7 +35,8 @@ class FetchSubreddit extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
+     * @throws \Exception
      */
     public function handle()
     {
@@ -58,9 +59,18 @@ class FetchSubreddit extends Command
             switch($message->kind) {
                 case 'message':
                     $info = json_decode($message->payload);
-                    if($info->success) {
-                        print("Saved {$info->count} posts from {$info->subreddit}");
-                        $complete = true;
+                    switch($info->notification) {
+                        case 'post':
+                            if($info->success) {
+                                print("{$info->subreddit}: {$info->post}\n");
+                            }
+                            break;
+                        case 'subreddit':
+                            if($info->success) {
+                                print("Saved {$info->count} posts from {$info->subreddit}\n");
+                                $complete = true;
+                            }
+                            break;
                     }
                     break;
                 default:
@@ -70,6 +80,5 @@ class FetchSubreddit extends Command
             if($complete)
                 break;
         }
-        print("HONK!");
     }
 }

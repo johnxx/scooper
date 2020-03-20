@@ -45,17 +45,17 @@ class RedditToken extends Model
     }
 
     public static function acquire(string $username = null) {
-            $username = $username ? $username : env('X_REDDIT_USERNAME');
-            $token = self::where('username', '=', $username)
-                ->firstOrCreate([
-                    'username' => $username,
-                ]);
-            $last_updated = new Carbon($token->updated_at);
+        $username = $username ? $username : env('X_REDDIT_USERNAME');
+        $token = self::where('username', '=', $username)
+            ->firstOrCreate([
+                'username' => $username,
+            ]);
+        $last_updated = new Carbon($token->updated_at);
         if($last_updated->addSeconds($token->expires_in) >= Carbon::now()) {
-                return $token;
-            } else {
-                $token->fill(RedditAPI::getToken($username))->save();
-                return $token;
-            }
+            return $token;
+        } else {
+            $token->fill(RedditAPI::getToken($username))->save();
+            return $token;
+        }
     }
 }
