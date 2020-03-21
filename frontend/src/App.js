@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {photos: []};
   }
   componentDidMount() {
-    const request = new Request('http://localhost:8000/api/subreddit/1/media');
+    const request = new Request('http://localhost:8000/api/media');
     fetch(request)
         .then(response => {
           if (response.status === 200) {

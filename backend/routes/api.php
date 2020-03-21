@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('subreddit/{subreddit}/posts', 'SubredditController@show');
-Route::get('subreddit/{subreddit}/media', 'SubredditController@media');
+Route::get('media', 'MediaController@index');
+Route::get('media/{subreddit}', 'MediaController@indexBySubreddit');
