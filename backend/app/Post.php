@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\ScoopModel;
 use PhpParser\Node\Expr\Cast\Object_;
 use \StdClass;
 
@@ -31,7 +32,7 @@ use \StdClass;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Post extends Model
+class Post extends ScoopModel
 {
 
     protected $guarded = [];

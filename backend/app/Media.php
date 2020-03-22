@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\ScoopModel;
 use App\Observers\MediaObserver;
 
 /**
@@ -38,7 +39,7 @@ use App\Observers\MediaObserver;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Media whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Media extends Model
+class Media extends ScoopModel
 {
 
     protected $guarded = [];

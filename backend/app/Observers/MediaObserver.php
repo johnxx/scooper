@@ -11,7 +11,7 @@ class MediaObserver
     }
 
     public function saved(Media $media) {
-        if(!$media->downloaded)
+        if(!$media->downloaded && $media->download_attempts < 5)
             FetchMedia::dispatch($media);
     }
 }

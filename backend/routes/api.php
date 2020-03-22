@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('media', 'MediaController@index');
-Route::get('media/{subreddit}', 'MediaController@indexBySubreddit');
+Route::get('media/subreddit/{subreddit}', 'MediaController@indexBySubreddit');

@@ -4,6 +4,7 @@ namespace App;
 
 use StdClass;
 use Illuminate\Database\Eloquent\Model;
+use App\ScoopModel;
 
 /**
  * App\Subreddit
@@ -31,7 +32,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subreddit whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Subreddit extends Model
+class Subreddit extends ScoopModel
 {
 
     protected $guarded = [];
