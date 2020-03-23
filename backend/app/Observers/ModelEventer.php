@@ -11,9 +11,9 @@ class ModelEventer
         $this->_publishEvent($model, __FUNCTION__);
     }
 
-    public function retrieved(ScoopModel $model) {
-        $this->_publishEvent($model, __FUNCTION__);
-    }
+    // public function retrieved(ScoopModel $model) {
+    //     $this->_publishEvent($model, __FUNCTION__);
+    // }
 
     protected function _modelToChannel($model, $action) {
         $namespace = strtolower(strtr(get_class($model), '\\', '.'));

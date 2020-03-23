@@ -55,7 +55,8 @@ class MediaController extends Controller
                     case 'pmessage':
                         if($image = json_decode($message->payload)) {
                             if($image->downloaded) {
-                                $img_from_db = $image_query->where('id', $image->id)->first();
+                                $base_query = clone $image_query;
+                                $img_from_db = $base_query->where('id', $image->id)->first();
                                 if($img_from_db) {
                                     $images->push($img_from_db);
                                     $complete = true;

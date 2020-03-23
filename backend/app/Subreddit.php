@@ -50,7 +50,7 @@ class Subreddit extends ScoopModel
                 'name' => $subreddit->display_name,
                 'raw_data' => $subreddit,
                 'subscribed' => 1,
-                'poll_interval' => '1h'
+                'poll_interval' => 3600
             ]);
     }
 

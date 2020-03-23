@@ -4,11 +4,8 @@
     <list default="true" id="f79ed730-f8d7-402f-a0c1-9741d987bede" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MediaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MediaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/MediaObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/MediaObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/ModelEventer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/ModelEventer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Subreddit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subreddit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpDebugGeneral" listening_started="true" notify_if_session_was_finished_without_being_paused="false" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="18e51805-0e07-46fe-9be4-ee9fbbf8d40b" name="localhost" port="8000" />
@@ -254,7 +251,8 @@
       <workItem from="1584758052151" duration="602000" />
       <workItem from="1584772510829" duration="3985000" />
       <workItem from="1584782938371" duration="1747000" />
-      <workItem from="1584832760592" duration="26426000" />
+      <workItem from="1584832760592" duration="27094000" />
+      <workItem from="1584916284802" duration="12658000" />
     </task>
     <servers />
   </component>
@@ -303,54 +301,54 @@
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
     <state x="2978" y="493" width="424" height="482" key="FileChooserDialogImpl/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584691007762" />
-    <state width="2514" height="415" key="GridCell.Tab.0.bottom" timestamp="1584871019892">
+    <state width="2514" height="459" key="GridCell.Tab.0.bottom" timestamp="1584956248818">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="415" key="GridCell.Tab.0.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584871019892" />
-    <state width="2514" height="415" key="GridCell.Tab.0.center" timestamp="1584871019892">
+    <state width="2514" height="459" key="GridCell.Tab.0.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248818" />
+    <state width="2514" height="459" key="GridCell.Tab.0.center" timestamp="1584956248818">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="415" key="GridCell.Tab.0.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584871019892" />
-    <state width="2514" height="415" key="GridCell.Tab.0.left" timestamp="1584871019892">
+    <state width="2514" height="459" key="GridCell.Tab.0.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248818" />
+    <state width="2514" height="459" key="GridCell.Tab.0.left" timestamp="1584956248817">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="415" key="GridCell.Tab.0.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584871019892" />
-    <state width="2514" height="415" key="GridCell.Tab.0.right" timestamp="1584871019892">
+    <state width="2514" height="459" key="GridCell.Tab.0.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248817" />
+    <state width="2514" height="459" key="GridCell.Tab.0.right" timestamp="1584956248818">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="415" key="GridCell.Tab.0.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584871019892" />
-    <state width="2514" height="562" key="GridCell.Tab.1.bottom" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.0.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248818" />
+    <state width="2514" height="459" key="GridCell.Tab.1.bottom" timestamp="1584956248819">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.1.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.1.center" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.1.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248819" />
+    <state width="2514" height="459" key="GridCell.Tab.1.center" timestamp="1584956248818">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.1.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.1.left" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.1.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248818" />
+    <state width="2514" height="459" key="GridCell.Tab.1.left" timestamp="1584956248818">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.1.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.1.right" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.1.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248818" />
+    <state width="2514" height="459" key="GridCell.Tab.1.right" timestamp="1584956248818">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.1.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.2.bottom" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.1.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248818" />
+    <state width="2514" height="459" key="GridCell.Tab.2.bottom" timestamp="1584956248819">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.2.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.2.center" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.2.bottom/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248819" />
+    <state width="2514" height="459" key="GridCell.Tab.2.center" timestamp="1584956248819">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.2.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.2.left" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.2.center/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248819" />
+    <state width="2514" height="459" key="GridCell.Tab.2.left" timestamp="1584956248819">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.2.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
-    <state width="2514" height="562" key="GridCell.Tab.2.right" timestamp="1584870932799">
+    <state width="2514" height="459" key="GridCell.Tab.2.left/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248819" />
+    <state width="2514" height="459" key="GridCell.Tab.2.right" timestamp="1584956248819">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state width="2514" height="562" key="GridCell.Tab.2.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584870932799" />
+    <state width="2514" height="459" key="GridCell.Tab.2.right/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584956248819" />
     <state x="2466" y="313" key="SettingsEditor" timestamp="1584783255778">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
@@ -363,10 +361,10 @@
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
     <state x="2759" y="466" width="871" height="539" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584782697054" />
-    <state x="2863" y="353" width="672" height="678" key="search.everywhere.popup" timestamp="1584851960120">
+    <state x="2863" y="353" width="672" height="678" key="search.everywhere.popup" timestamp="1584950552757">
       <screen x="1920" y="2" width="2560" height="1440" />
     </state>
-    <state x="2863" y="353" width="672" height="678" key="search.everywhere.popup/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584851960120" />
+    <state x="2863" y="353" width="672" height="678" key="search.everywhere.popup/1920.2.2560.1440/4480.390.1680.1050/0.32.1920.1048@1920.2.2560.1440" timestamp="1584950552757" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -376,13 +374,19 @@
           <line>42</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php</url>
+          <line>72</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/MediaController.php</url>
+          <line>61</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
-      <configuration name="server.php">
-        <watch expression="$images-&gt;all()" language="PHP" />
-        <watch expression="$react_gallery-&gt;all()" language="PHP" />
-      </configuration>
       <configuration name="PhpLocalRunConfigurationType">
         <watch expression="$media-&gt;width" language="PHP" />
         <watch expression="$media-&gt;height" language="PHP" />
