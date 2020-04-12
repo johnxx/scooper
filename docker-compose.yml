@@ -3,7 +3,7 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile.development
+      dockerfile: Dockerfile.fpm
     ports:
       - "9000:9000"
   frontend:

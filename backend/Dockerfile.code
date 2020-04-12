@@ -1,0 +1,2 @@
+COPY . /srv/app
+VOLUME /srv/app
