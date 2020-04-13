@@ -8,10 +8,15 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY package.json /app/package.json
+COPY src /app/src
+COPY public /app/public
+COPY package.json /app
+
 RUN npm install
+RUN npm run-script build
 
-FROM nginx:latest AS serve
+FROM nginx:alpine AS serve
 
-COPY --from=build /app/build /srv/www
+COPY --from=build /app/build /srv/app
+COPY fpm.conf /etc/nginx/conf.d/default.conf
 

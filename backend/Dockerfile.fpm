@@ -7,5 +7,17 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-COPY . /srv/app
-VOLUME
+COPY . /srv/app/
+WORKDIR /srv/app
+RUN php artisan key:generate
+RUN php artisan config:cache
+RUN mkdir -p /srv/app/storage && \
+  mkdir -p /srv/app/storage/app && \
+  mkdir -p /srv/app/storage/logs && \
+  mkdir -p /srv/app/storage/framework && \
+  mkdir -p /srv/app/storage/framework/cache && \
+  mkdir -p /srv/app/storage/framework/sessions && \
+  mkdir -p /srv/app/storage/framework/testing && \
+  mkdir -p /srv/app/storage/framework/views && \
+  chown -R www-data:www-data /srv/app/storage
+VOLUME /srv/app/storage
